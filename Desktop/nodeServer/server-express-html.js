@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+const port = process.env.port || 3000; 
+
 app.use(express.static(__dirname + "/public_html")) 
 
 app.get('/', function (req, res) {
@@ -15,4 +17,4 @@ app.get('/carro', function (req, res) {
     }
     res.send(carro);
   })
-app.listen(3000)
+app.listen(port)
